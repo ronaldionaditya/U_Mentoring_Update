@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mobile.umentoring.adapter.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_leaderboardFragment2"
+            app:destination="@id/leaderboardFragment2" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.mobile.umentoring.adapter.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/vacancyListFragment"
+        android:name="com.mobile.umentoring.adapter.VacancyListFragment"
+        android:label="fragment_vacancy_list"
+        tools:layout="@layout/fragment_vacancy_list" />
+    <fragment
+        android:id="@+id/profileFragment2"
+        android:name="com.mobile.umentoring.adapter.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_profileFragment2_to_profileUpdateFragment"
+            app:destination="@id/profileUpdateFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_testimonialFragment"
+            app:destination="@id/testimonialFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_portofolioInputFragment"
+            app:destination="@id/portofolioInputFragment" />
+        <action
+            android:id="@+id/action_profileFragment2_to_testimoniInputFragment"
+            app:destination="@id/testimoniInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.mobile.umentoring.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/profileUpdateFragment"
+        android:name="com.mobile.umentoring.view.ProfileUpdateFragment"
+        android:label="fragment_profile_update"
+        tools:layout="@layout/fragment_profile_update" >
+        <action
+            android:id="@+id/action_profileUpdateFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/testimonialFragment"
+        android:name="com.mobile.umentoring.view.TestimonialFragment"
+        android:label="fragment_testimonial"
+        tools:layout="@layout/fragment_testimonial" >
+        <action
+            android:id="@+id/action_testimonialFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderboardFragment2"
+        android:name="com.mobile.umentoring.view.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" >
+        <action
+            android:id="@+id/action_leaderboardFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.mobile.umentoring.view.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" >
+        <action
+            android:id="@+id/action_scoreFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.mobile.umentoring.view.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_questionQuizFragment"
+            app:destination="@id/questionQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/portofolioInputFragment"
+        android:name="com.mobile.umentoring.view.PortofolioInputFragment"
+        android:label="fragment_portofolio_input"
+        tools:layout="@layout/fragment_portofolio_input" >
+        <action
+            android:id="@+id/action_portofolioInputFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/testimoniInputFragment"
+        android:name="com.mobile.umentoring.view.TestimoniInputFragment"
+        android:label="fragment_testimoni_input"
+        tools:layout="@layout/fragment_testimoni_input" >
+        <action
+            android:id="@+id/action_testimoniInputFragment_to_profileFragment2"
+            app:destination="@id/profileFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionQuizFragment"
+        android:name="com.mobile.umentoring.view.QuestionQuizFragment"
+        android:label="fragment_question_quiz"
+        tools:layout="@layout/fragment_question_quiz" />
+</navigation>

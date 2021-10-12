@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F6EE"
+    tools:context=".view.QuizFragment">
+
+    <LinearLayout
+        android:id="@+id/llQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:background="#E8F6EE"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:src="@drawable/quiz3" />
+
+        <TextView
+            android:layout_width="157dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="25dp"
+            android:gravity="center"
+            android:text="Ayo Lakukan Test Untuk Mengetahui Seberapa Pengetahuan Mu Mengenai Program Yang Kamu Pilih!"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:src="@drawable/quiz4" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llQuiz"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPretest"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:background="@drawable/background_quiz"
+            android:text="Pretest"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="35dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPosttest"
+            android:layout_width="115dp"
+            android:layout_height="115dp"
+            android:background="@drawable/background_quiz"
+            android:text="Posttest"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnScore"
+        android:layout_width="237dp"
+        android:layout_height="90dp"
+        android:layout_below="@+id/llTest"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/background_score_quiz"
+        android:text="Score"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>
