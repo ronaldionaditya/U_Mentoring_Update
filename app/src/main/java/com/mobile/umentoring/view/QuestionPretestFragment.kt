@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_question_quiz.*
 import kotlinx.android.synthetic.main.fragment_score.*
 
 
-class QuestionQuizFragment : Fragment() {
+class QuestionPretestFragment : Fragment() {
 
     lateinit var view: ViewModel
     override fun onCreateView(

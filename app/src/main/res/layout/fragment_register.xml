@@ -81,7 +81,6 @@
             android:drawableEnd="@drawable/viewpass"
             android:drawablePadding="12dp"
             android:hint="Enter your Email"
-            android:inputType="textPassword"
             android:paddingStart="17dp"
             android:paddingEnd="12dp" />
 

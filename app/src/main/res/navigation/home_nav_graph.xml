@@ -121,7 +121,7 @@
     </fragment>
     <fragment
         android:id="@+id/questionQuizFragment"
-        android:name="com.mobile.umentoring.view.QuestionQuizFragment"
+        android:name="com.mobile.umentoring.view.QuestionPretestFragment"
         android:label="fragment_question_quiz"
         tools:layout="@layout/fragment_question_quiz" />
 </navigation>

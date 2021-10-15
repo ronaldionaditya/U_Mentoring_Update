@@ -17,9 +17,9 @@ interface ConfigApi {
     //Registrasi
     @FormUrlEncoded
     @POST("register")
-    fun register(@Query("name")name:String,
-                 @Query("email")email:String,
-                 @Query("password")password:String
+    fun register(@Field("name")name:String,
+                 @Field("email")email:String,
+                 @Field("password")password:String
     ): Observable<ResponseRegister>
 
     //Todo mengambil api program dari repo

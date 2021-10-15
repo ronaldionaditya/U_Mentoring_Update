@@ -24,7 +24,7 @@ class ViewModel : ViewModel() {
     var emailKosongRegister = MutableLiveData<Boolean>()
     var passwordKosongRegister = MutableLiveData<Boolean>()
     var errorRegister = MutableLiveData<Throwable>()
-    var responRegister = MutableLiveData<ResponseUser>()
+    var responRegister = MutableLiveData<ResponseRegister>()
 
     // Todo RecyclerView
     var repo = Repository()
@@ -90,7 +90,6 @@ class ViewModel : ViewModel() {
                 progressBar.value = false
             })
         }
-
     }
 
     fun emailIsEmpty(): LiveData<Boolean> {
@@ -115,31 +114,40 @@ class ViewModel : ViewModel() {
     }
 
 
-//    fun register(
-//        name: String,
-//        email: String,
-//        password: String
-//    ) {
-//        progressBar.value = true
-//        if (email.isEmpty()) {
-//            emailKosongRegister.value = true
-//            progressBar.value = false
-//
-//        } else if (password.isEmpty()) {
-//            passwordKosongRegister.value = true
-//            progressBar.value = false
-//
-//        } else {
-//            repository.register(name, email, password, {
-//                responRegister.value = it
-//                progressBar.value = false
-//            }, {
-//                errorRegister.value = it
-//                progressBar.value = false
-//            })
-//        }
-//
-//    }
+    // Register
+    fun register(
+        name: String,
+        email: String,
+        password: String
+    ) {
+        progressBar.value = true
+        if (email.isEmpty()) {
+            emailKosongRegister.value = true
+            progressBar.value = false
+
+        } else if (password.isEmpty()) {
+            passwordKosongRegister.value = true
+            progressBar.value = false
+
+        } else {
+            repository.register(name, email, password, {
+                responRegister.value = it
+                progressBar.value = false
+            }, {
+                errorRegister.value = it
+                progressBar.value = false
+            })
+        }
+
+    }
+
+    fun registerResponse(): LiveData<ResponseRegister> {
+        return responRegister
+    }
+
+    fun registerError(): LiveData<Throwable> {
+        return errorRegister
+    }
 
     //Todo panggil repo api RecyclerView
     //Program

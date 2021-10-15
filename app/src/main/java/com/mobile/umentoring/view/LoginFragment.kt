@@ -50,6 +50,7 @@ class LoginFragment : Fragment() {
 
         viewModel = ViewModelProviders.of(this).get(com.mobile.umentoring.viewModel.ViewModel::class.java)
         pengamatan()
+
         btnSignIn.setOnClickListener {
 
             //todo 1 ambil view pada login
@@ -75,11 +76,6 @@ class LoginFragment : Fragment() {
 //                .navigate(R.id.action_loginFragment_to_menuActivity)
 //        }
 //    }
-
-
-
-
-
 
     private fun pengamatan() {
         viewModel.loginResponse().observe(viewLifecycleOwner, Observer { loginResponse(it) })

@@ -10,7 +10,10 @@ import com.bumptech.glide.Glide
 import com.mobile.umentoring.R
 import com.mobile.umentoring.model.DataItemPortofolio
 
-class PortofolioAdapter(val data: List<DataItemPortofolio?>?) :
+class PortofolioAdapter(
+    val data: List<DataItemPortofolio?>?,
+    val klik: portofolioVideo
+) :
     RecyclerView.Adapter<PortofolioAdapter.PortofolioHolder>() {
     class PortofolioHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img = itemView.findViewById<ImageView>(R.id.ivPortImg)
@@ -32,9 +35,16 @@ class PortofolioAdapter(val data: List<DataItemPortofolio?>?) :
 
         holder.textNama.text = data?.get(position)?.participant?.name
         holder.textBatch.text = data?.get(position)?.participant?.angkatan
+        holder.itemView.setOnClickListener {
+            klik.detail(data?.get(position))
+        }
     }
 
     override fun getItemCount(): Int {
         return data?.size ?: 0
+    }
+
+    interface portofolioVideo{
+        fun detail (item: DataItemPortofolio?)
     }
 }

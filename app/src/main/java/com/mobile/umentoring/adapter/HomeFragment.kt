@@ -1,10 +1,13 @@
 package com.mobile.umentoring.adapter
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -21,6 +24,7 @@ import com.mobile.umentoring.R
 import com.mobile.umentoring.adapter.recyclerView.Home.PortofolioAdapter
 import com.mobile.umentoring.adapter.recyclerView.Home.ProgramAdapter
 import com.mobile.umentoring.adapter.recyclerView.Home.TestimoniAdapter
+import com.mobile.umentoring.adapter.recyclerView.Home.ViewVideoActivity
 import com.mobile.umentoring.cons.Constants
 import com.mobile.umentoring.model.*
 import com.mobile.umentoring.viewModel.ViewModel
@@ -169,7 +173,22 @@ class HomeFragment : Fragment(), BaseSliderView.OnSliderClickListener,
             var item = dataa?.get(x)?.participant
             Log.e("data", "$item")
 
-            var adapter = PortofolioAdapter(dataa)
+
+            //Video Portofolio
+            var adapter = PortofolioAdapter(dataa, object : PortofolioAdapter.portofolioVideo {
+                override fun detail(item: DataItemPortofolio?) {
+
+                    val intent = Intent(context,ViewVideoActivity::class.java)
+                    intent.putExtra("link",item?.link)
+                    startActivity(intent)
+
+//                    webView.settings.javaScriptEnabled = true
+//                    webView.webChromeClient = WebChromeClient()
+//                    webView.loadUrl(item?.link?:"")
+//                    Toast.makeText(context, item?.link, Toast.LENGTH_SHORT).show()
+                }
+
+            })
             rvPortofolio.layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             rvPortofolio.adapter = adapter
