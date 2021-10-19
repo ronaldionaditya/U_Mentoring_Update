@@ -12,7 +12,10 @@ import com.mobile.umentoring.cons.Constants
 import com.mobile.umentoring.model.DataItemProgram
 
 
-class ProgramAdapter(val data: List<DataItemProgram?>?,var onClick:onCLickListener) :
+class ProgramAdapter(
+    val data: List<DataItemProgram?>?,
+    var onClick: onCLickListener
+) :
     RecyclerView.Adapter<ProgramAdapter.ProgramHolder>() {
     class ProgramHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img = itemView.findViewById<ImageView>(R.id.ivImageClass)
@@ -48,7 +51,7 @@ class ProgramAdapter(val data: List<DataItemProgram?>?,var onClick:onCLickListen
         return data?.size ?: 0
     }
 
-    interface onCLickListener{
+    interface onCLickListener {
         fun details(item: DataItemProgram?)
     }
 

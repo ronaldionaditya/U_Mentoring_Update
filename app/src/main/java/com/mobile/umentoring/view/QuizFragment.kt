@@ -26,14 +26,13 @@ class QuizFragment : Fragment() {
 
         btnPretest.setOnClickListener {
             Navigation.findNavController(it)
-                .navigate(R.id.action_quizFragment_to_questionQuizFragment)
+                .navigate(R.id.action_quizFragment_to_pretestFragment)
         }
 
         btnPosttest.setOnClickListener {
             Navigation.findNavController(it)
-                .navigate(R.id.action_quizFragment_to_questionQuizFragment)
+                .navigate(R.id.action_quizFragment_to_posttestFragment)
         }
-
 
     }
 

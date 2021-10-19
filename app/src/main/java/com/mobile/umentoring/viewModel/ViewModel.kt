@@ -37,6 +37,22 @@ class ViewModel : ViewModel() {
     var successTest = MutableLiveData<ResponseTestimoni>()
     var errorTest = MutableLiveData<Throwable>()
 
+    // Pretest
+    var successPretest = MutableLiveData<ResponseQuizPretest>()
+    var errorPretest = MutableLiveData<Throwable>()
+
+    // Posttest
+    var successPosttest = MutableLiveData<ResponseQuizPosttest>()
+    var errorPosttest = MutableLiveData<Throwable>()
+
+    // Info
+    var successInfo = MutableLiveData<ResponseInfo>()
+    var errorInfo = MutableLiveData<Throwable>()
+
+    // Vacancy
+    var successVacancy = MutableLiveData<ResponseVacancy>()
+    var errorVacancy = MutableLiveData<Throwable>()
+
     //Profile
     var successProfile = MutableLiveData<ResponseProfile>()
     var errorProfile = MutableLiveData<Throwable>()
@@ -349,6 +365,77 @@ class ViewModel : ViewModel() {
 
     fun errorQuestion(): LiveData<Throwable> {
         return errorQuestion
+    }
+
+
+    // Pretest
+    fun panggilApiPretest() {
+        repo.getApiPretest({
+            successPretest.value = it
+
+        }, {
+            errorPretest.value = it
+        })
+    }
+
+    fun successPretest(): LiveData<ResponseQuizPretest> {
+        return successPretest
+    }
+
+    fun errorPretest(): LiveData<Throwable> {
+        return errorPretest
+    }
+
+    // Posttest
+    fun panggilApiPosttest() {
+        repo.getApiPosttest({
+            successPosttest.value = it
+        }, {
+            errorPosttest.value = it
+        })
+    }
+
+    fun successPosttest(): LiveData<ResponseQuizPosttest> {
+        return successPosttest
+    }
+
+    fun errorPosttest(): LiveData<Throwable> {
+        return errorPosttest
+    }
+
+    // Info
+    fun panggilApiInfo() {
+        repo.getApiInfo({
+            successInfo.value = it
+
+        }, {
+            errorInfo.value = it
+        })
+    }
+
+    fun successInfo(): LiveData<ResponseInfo> {
+        return successInfo
+    }
+
+    fun errorInfo(): LiveData<Throwable> {
+        return errorInfo
+    }
+
+    // Vacancy
+    fun panggilApiVacancy() {
+        repo.getApiVacancy({
+            successVacancy.value = it
+        }, {
+            errorVacancy.value = it
+        })
+    }
+
+    fun successVacancy(): LiveData<ResponseVacancy> {
+        return successVacancy
+    }
+
+    fun errorVacancy(): LiveData<Throwable> {
+        return errorVacancy
     }
 
 

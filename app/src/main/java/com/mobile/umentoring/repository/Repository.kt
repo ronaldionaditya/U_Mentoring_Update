@@ -3,6 +3,7 @@ package com.mobile.umentoring.repository
 import com.mobile.umentoring.model.*
 import com.mobile.umentoring.network.ConfigNetwork
 import com.mobile.umentoring.network.ConfigNetworkLaravel
+import com.mobile.umentoring.network.ConfigNetworkPhp
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -194,6 +195,57 @@ class Repository {
             })
     }
 
+    fun getApiPretest(
+        responseSuccess:(ResponseQuizPretest) -> Unit,
+        responseError: (Throwable) -> Unit
+    ){
+        ConfigNetworkPhp.getRetrofit().getApiPretest().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseSuccess(it)
+            },{
+                responseError(it)
+            })
+    }
+
+    fun getApiPosttest(
+        responseSuccess:(ResponseQuizPosttest) -> Unit,
+        responseError: (Throwable) -> Unit
+    ){
+        ConfigNetworkPhp.getRetrofit().getApiPosttest().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseSuccess(it)
+            },{
+                responseError(it)
+            })
+    }
+
+    fun getApiInfo(
+        responseSuccess:(ResponseInfo) -> Unit,
+        responseError: (Throwable) -> Unit
+    ){
+        ConfigNetworkPhp.getRetrofit().getApiInfo().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseSuccess(it)
+            },{
+                responseError(it)
+            })
+    }
+
+    fun getApiVacancy(
+        responseSuccess:(ResponseVacancy) -> Unit,
+        responseError: (Throwable) -> Unit
+    ){
+        ConfigNetworkPhp.getRetrofit().getApiVacancy().subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseSuccess(it)
+            },{
+                responseError(it)
+            })
+    }
 
 
 //    fun getApiMyScore(

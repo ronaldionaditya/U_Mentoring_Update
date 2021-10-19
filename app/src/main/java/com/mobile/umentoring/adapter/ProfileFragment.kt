@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.mobile.umentoring.view.MainActivity
 import com.mobile.umentoring.R
+import com.mobile.umentoring.adapter.recyclerView.Home.ViewVideoActivity
 import com.mobile.umentoring.adapter.recyclerView.Profile.PortofolioProfileAdapter
 import com.mobile.umentoring.adapter.recyclerView.Profile.ProgramProfileAdapter
 import com.mobile.umentoring.adapter.recyclerView.Profile.TestimoniProfileAdapter
@@ -174,10 +175,16 @@ class ProfileFragment : Fragment() {
         var logss = it?.data
         Log.e("dataaaa portofolio", "$logss")
 
+
+
         var adapter = PortofolioProfileAdapter(it?.data)
+
         rvPortofolioProfile.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         rvPortofolioProfile.adapter = adapter
+
+
+
     }
 
     //Testimoni

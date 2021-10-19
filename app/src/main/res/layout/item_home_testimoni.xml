@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="207dp"
-        android:layout_height="164dp"
+        android:layout_height="250dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/background_leaderboard"
@@ -27,30 +27,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/black"
             android:layout_marginTop="13dp"
             android:text="Alumni of batch #1"
+            android:textColor="@color/black"
             android:textSize="10sp" />
 
         <TextView
             android:id="@+id/tvTestName"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:text="Mesut Ozil"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvTestDesk"
-            android:layout_width="120dp"
-            android:textColor="@color/black"
-            android:layout_height="28dp"
+            android:layout_width="155dp"
+            android:layout_height="124dp"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:text="“Highly recommended for studying”"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="12sp" />
 
     </LinearLayout>

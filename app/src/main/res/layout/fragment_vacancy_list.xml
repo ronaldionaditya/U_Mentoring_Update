@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".adapter.VacancyListFragment">
 
@@ -24,39 +25,14 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
-    <RelativeLayout
-        android:layout_width="351dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="123dp">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVacancy"
+        android:layout_below="@+id/ivBackInfo"
+        android:layout_margin="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_vacancy"/>
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_list_vacancy" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="135dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Senior Engineering Manager (Content Technologies) - GoFood"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="12 Apr 2020, 10:00 PM"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
 
 </RelativeLayout>

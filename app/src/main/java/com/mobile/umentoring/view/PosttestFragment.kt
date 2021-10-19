@@ -1,4 +1,4 @@
-package com.mobile.umentoring.adapter
+package com.mobile.umentoring.view
 
 import android.os.Bundle
 import android.util.Log
@@ -10,16 +10,16 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.mobile.umentoring.R
-import com.mobile.umentoring.adapter.recyclerView.Home.InfoAdapter
 import com.mobile.umentoring.adapter.recyclerView.Home.QuestionAdapter
-import com.mobile.umentoring.model.DataItemInfo
+import com.mobile.umentoring.adapter.recyclerView.Home.QuestionPosttestAdapter
+import com.mobile.umentoring.model.DataItemPosttest
 import com.mobile.umentoring.model.DataItemPretest
-import com.mobile.umentoring.model.ResponseInfo
+import com.mobile.umentoring.model.ResponseQuizPosttest
 import com.mobile.umentoring.viewModel.ViewModel
-import kotlinx.android.synthetic.main.fragment_info.*
+import kotlinx.android.synthetic.main.fragment_posttest.*
 import kotlinx.android.synthetic.main.fragment_pretest.*
 
-class InfoFragment : Fragment() {
+class PosttestFragment : Fragment() {
 
     //1 deklarasi
     lateinit var view: ViewModel
@@ -29,7 +29,7 @@ class InfoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_info, container, false)
+        return inflater.inflate(R.layout.fragment_posttest, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -42,33 +42,34 @@ class InfoFragment : Fragment() {
         pengamatan()
 
         //4 implementasi
-        view.panggilApiInfo()
+        view.panggilApiPosttest()
 
     }
 
     private fun pengamatan() {
-        view.successInfo()
-            .observe(viewLifecycleOwner, Observer { showSuccessInfo(it) })
-        view.errorInfo()
-            .observe(viewLifecycleOwner, Observer { showErrorInfo(it) })
+        view.successPosttest()
+            .observe(viewLifecycleOwner, Observer { showSuccessPosttest(it) })
+        view.errorPosttest()
+            .observe(viewLifecycleOwner, Observer { showErrorPosttest(it) })
     }
 
-    private fun showErrorInfo(it: Throwable?) {
+    private fun showErrorPosttest(it: Throwable?) {
         Toast.makeText(context,it?.message, Toast.LENGTH_SHORT).show()
         Log.e("error",it?.message?:"")
     }
 
-    private fun showSuccessInfo(it: ResponseInfo?) {
-        var adapter = InfoAdapter(it?.data,object : InfoAdapter.klik{
-            override fun a(data: DataItemInfo?) {
-                Toast.makeText(context, data?.judul, Toast.LENGTH_SHORT).show()
+    private fun showSuccessPosttest(it: ResponseQuizPosttest?) {
+        var adapter = QuestionPosttestAdapter(it?.data,object : QuestionPosttestAdapter.klik{
+            override fun a(data: DataItemPosttest?) {
+                Toast.makeText(context, data?.questionText, Toast.LENGTH_SHORT).show()
             }
-        })
 
-        rvInfo.adapter = adapter
+        })
+        rvQuestionPosttest.adapter = adapter
     }
 
     private fun initt() {
         view = ViewModelProvider(this)[ViewModel::class.java]
     }
+
 }

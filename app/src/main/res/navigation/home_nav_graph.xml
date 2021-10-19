@@ -100,6 +100,12 @@
         <action
             android:id="@+id/action_quizFragment_to_questionQuizFragment"
             app:destination="@id/questionQuizFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_pretestFragment"
+            app:destination="@id/pretestFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_posttestFragment"
+            app:destination="@id/posttestFragment" />
     </fragment>
     <fragment
         android:id="@+id/portofolioInputFragment"
@@ -124,4 +130,14 @@
         android:name="com.mobile.umentoring.view.QuestionPretestFragment"
         android:label="fragment_question_quiz"
         tools:layout="@layout/fragment_question_quiz" />
+    <fragment
+        android:id="@+id/pretestFragment"
+        android:name="com.mobile.umentoring.view.PretestFragment"
+        android:label="fragment_pretest"
+        tools:layout="@layout/fragment_pretest" />
+    <fragment
+        android:id="@+id/posttestFragment"
+        android:name="com.mobile.umentoring.view.PosttestFragment"
+        android:label="fragment_posttest"
+        tools:layout="@layout/fragment_posttest" />
 </navigation>

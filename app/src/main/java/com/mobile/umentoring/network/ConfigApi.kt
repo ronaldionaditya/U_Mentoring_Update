@@ -70,6 +70,17 @@ interface ConfigApi {
         @Query("categoryId") questionQuiz: String
     ): Flowable<ResponseQuestionQuiz>
 
+    @GET("pretestApi.php")
+    fun getApiPretest(): Flowable<ResponseQuizPretest>
+
+    @GET("posttestApi.php")
+    fun getApiPosttest(): Flowable<ResponseQuizPosttest>
+
+    @GET("informasiApi.php")
+    fun getApiInfo(): Flowable<ResponseInfo>
+
+    @GET("vacancyApi.php")
+    fun getApiVacancy(): Flowable<ResponseVacancy>
 
 //    @GET("grade/getLeaderBoardByUser")
 //    fun getApiMyScore(

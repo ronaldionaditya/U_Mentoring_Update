@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvQuestionPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:text="1. Apakah kamu laki-laki?"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/rbAnswerAPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Iya"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/rbAnswerBPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Tidak"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/rbAnswerCPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Bisa jadi"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/rbAnswerDPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Mungkin" />
+
+    </LinearLayout>
+
+</RelativeLayout>
