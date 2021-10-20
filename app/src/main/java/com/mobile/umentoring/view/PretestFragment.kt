@@ -71,15 +71,17 @@ class PretestFragment : Fragment() {
             ) {
                 if (data==get?.correctAnswer){
                     benar.add(1)
-                    for (x in benar){
-                        totalBenar = totalBenar.plus(x)
-                    }
+//                    for (x in benar){
+//                        totalBenar = totalBenar.plus(x)
+//                    }
+                    totalBenar = totalBenar.plus(1)
                     Toast.makeText(context, "Benar", Toast.LENGTH_SHORT).show()
                 }else{
                     salah.add(1)
-                    for (x in salah){
-                        totalSalah = totalSalah.plus(x)
-                    }
+//                    for (x in salah){
+//                        totalSalah = totalSalah.plus(x)
+//                    }
+                    totalSalah = totalSalah.plus(1)
                     Toast.makeText(context, "Salah", Toast.LENGTH_SHORT).show()
                 }
 

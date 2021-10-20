@@ -144,7 +144,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun showSuccessProgramProfile(it: ResponseProgramProfile?) {
-//        Toast.makeText(context, "Success Profile", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "Success Profile", Toast.LENGTH_SHORT).show( )
 
         var logss = it?.data
         Log.e("dataaaaaaa", "$logss")
